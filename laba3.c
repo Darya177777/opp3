@@ -7,9 +7,9 @@
 #define NUM_DIMS 2
 #define XLATTICE 2
 #define YLATTICE 2
-#define M 8
-#define N 8
-#define K 8
+#define M 2000
+#define N 2000
+#define K 2000
 
 void InitMatrix(double **MatrixA, double **MatrixB, double **MatrixC) {
     *MatrixA = (double *)malloc(M * N * sizeof(double));
