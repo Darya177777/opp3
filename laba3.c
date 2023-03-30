@@ -27,10 +27,14 @@ void InitMatrix(double **MatrixA, double **MatrixB, double **MatrixC) {
 }
 
 void SimpleMultiply(double **SubMatrixA, double **SubMatrixB, double **SubMatrixC, int SizeBandA, int SizeBandB) {
-    for (int i = 0; i < SizeBandA; i++) {
-        for (int j = 0; j < SizeBandB; j++) {
+    for (int i = 0; i < SizeBandA; i++){
+        for (int j = 0; j < SizeBandB; j++){
             (*SubMatrixC)[SizeBandB * i + j] = 0.0;
-            for (int k = 0; k < N; k++) {
+        }
+    }
+    for (int i = 0; i < SizeBandA; i++) {
+        for (int k = 0; k < N; k++) {
+            for (int j = 0; j < SizeBandB; j++){
                 (*SubMatrixC)[SizeBandB * i + j] = (*SubMatrixC)[SizeBandB * i + j] + (*SubMatrixA)[N * i + k] * (*SubMatrixB)[SizeBandB * k + j];
             }
         }
